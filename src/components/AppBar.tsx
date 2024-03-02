@@ -9,8 +9,9 @@ const AppBar = () => {
     <Link className="transition-colors hover:text-blue-500" href={"/"}>
     <Image src="logo.svg"
     width={100}
-    height={120}
+    height={80}
     alt="Picture of the logo"
+    priority={true}
     />
     </Link>
     <Link
