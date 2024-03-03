@@ -1,6 +1,8 @@
 import { getServerSession } from "next-auth";
 import Link from "next/link";
 import { authOptions } from "../api/auth/[...nextauth]/route";
+import SideMenu from "@/components/SideMenu";
+import CreateACommunityButton from "./_components/CreateACommunityButton";
 
 type Props = {
   children: React.ReactNode;
@@ -9,17 +11,26 @@ type Props = {
 const DashBoardLayout = async (props: Props) => {
   const session = await getServerSession(authOptions);
   return (
-  <div className="container grid grid-cols-1 gap-4 lg:grid-cols-5 lg:gap-8">
-  <div className="h-32 rounded-lg bg-gray-200">
+    <div className="container grid grid-cols-1 gap-4 lg:grid-cols-5 lg:gap-8">
+    <div className="h-fit lg:col-span-1 rounded-lg bg-gray-200">
+    <SideMenu />
+    </div>
+    <div className="h-fit rounded-lg lg:col-span-3">{props.children}</div>
+    <div className="h-fit lg:col-span-1 rounded-lg text-center mx-auto border w-full"> 
     <Link
-    className="p-3 rounded hover:bg-emerald-600 hover:text-white hover:shadow transition"
     href={`/dashboard/user/${session?.user.id}`}
     >
-    User Profile
+    <div className="relative flex-shrink-0 justify-center items-center w-12 h-12 mx-auto rounded-full bg-green-100 mt-5">
+    <span className="absolute bottom-0 right-0 w-4 h-4 dark:bg-green-600 border rounded-full dark:text-gray-100 dark:border-gray-900"></span>
+    <img src="https://source.unsplash.com/50x50/?portrait" alt="" className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-700" />
+    </div>          
+    <span className="text-sm">{session?.user.name}</span>
+    <div>{session?.user.email}</div>
     </Link>
+        <div className="h-fit w-full mt-5">
+          <CreateACommunityButton /> 
+        </div>
     </div>
-      <div className="h-32 rounded-lg lg:col-span-3">{props.children}</div>
-        <div className="h-32 rounded-lg bg-gray-200 1fr"></div>
     </div>
     );
   };
