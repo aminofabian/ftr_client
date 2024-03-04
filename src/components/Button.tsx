@@ -1,7 +1,7 @@
 const getVariant = (variant?: VariantType) => {
   switch (variant) {
     case "primary":
-    return "bg-green-500 hover:bg-green-600  text-white shadow shadow-violet-600/25 hover:shadow-green-600/75";
+    return "bg-[#72bf44] hover:bg-lime-500  text-white shadow shadow-violet-600/25 hover:shadow-green-600/75";
     case "danger":
     return "bg-orange-500 hover:bg-orange-700 text-white  shadow shadow-orange-600/25 hover:shadow-orange-600/75";
     case "success":

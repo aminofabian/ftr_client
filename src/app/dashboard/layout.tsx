@@ -15,8 +15,8 @@ const DashBoardLayout = async (props: Props) => {
     <div className="h-fit lg:col-span-1 rounded-lg bg-gray-200">
     <SideMenu />
     </div>
-    <div className="h-fit rounded-lg lg:col-span-3">{props.children}</div>
-    <div className="h-fit lg:col-span-1 rounded-lg text-center mx-auto border w-full"> 
+    <div className="h-full rounded-lg bg-gray-100 lg:col-span-3 lg:w-full justify-center">{props.children}</div>
+    <div className="h-fit lg:col-span-1 rounded-lg text-center border w-full"> 
     <Link
     href={`/dashboard/user/${session?.user.id}`}
     >
@@ -27,9 +27,9 @@ const DashBoardLayout = async (props: Props) => {
     <span className="text-sm">{session?.user.name}</span>
     <div>{session?.user.email}</div>
     </Link>
-        <div className="h-fit w-full mt-5">
-          <CreateACommunityButton /> 
-        </div>
+    <div className="h-fit w-full mt-5">
+    <CreateACommunityButton /> 
+    </div>
     </div>
     </div>
     );
