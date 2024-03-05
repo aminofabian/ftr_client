@@ -53,7 +53,7 @@ const Login = (props: FormInputs) => {
     </div>
     <div className="flex justify-center items-center gap-2">
     <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 dark:bg-violet-400 bg-primary text-white" type='submit'>Sign in</button>
-    <Link className="hover:text-primary w-full text-center bg-sky-50 p-3" href={props.callbackUrl ?? '/'}>
+    <Link className="hover:text-primary w-full text-center bg-sky-50 p-3" href='/'>
     Cancel
     </Link>
     </div>

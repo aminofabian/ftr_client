@@ -36,7 +36,7 @@ import {
 export default function RequestBox() {
   const [date, setDate] = React.useState<Date>()
   return (
-    <div className='container lg:w-full h-full border rounded-lg flex flex-col'>
+    <div className='container lg:w-full h-full border rounded-lg flex flex-col pb-5'>
     <form className='w-full'>
     <div className='flex flex-col lg:flex-row items-center lg:justify-center w-full'>
     <Image
@@ -73,10 +73,10 @@ Post Your Help Request
 <DialogHeader>
 <DialogTitle>Edit profile</DialogTitle>
 <DialogDescription>
-Make changes to your profile here. Click save when youre done.
+Fill the Table to Complete Your Request
 <div className="grid w-full max-w-sm items-center gap-1.5 text-sm">
-<Label htmlFor="picture">Upload An Image/Video (optional)</Label>
-<input type="file" name="files" id="files" className="px-8 py-12 border-2 border-dashed rounded-md dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" />
+<Label htmlFor="picture text-primary">Upload An Image/Video (optional)</Label>
+<input type="file" name="files" id="files" className="px-2 py-12 border-2 border-dashed rounded-md dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" />
 </div>
 
 </DialogDescription>
@@ -86,8 +86,8 @@ Make changes to your profile here. Click save when youre done.
 <Label htmlFor="name" className="text-right">
 Amount
 </Label>
-<input type="text" name="price" id="price" placeholder="10000" className="flex flex-1 text-right border border-lime-400 sm:text-sm rounded-l-md dark:border-gray-700 dark:text-gray-100 dark:bg-gray-800 focus:ri" />
-<span className="flex items-center pointer-events-none sm:text-sm rounded-r-md dark:bg-gray-700">€</span>
+<input type="text" name="price" id="price" placeholder="10000" className="flex flex-1 text-right border py-2 pr-2 border-lime-400 sm:text-sm rounded-l-md dark:border-gray-700 dark:text-gray-100 dark:bg-gray-800 focus:ri" />
+<span className="flex items-center pointer-events-none sm:text-sm rounded-r-md dark:bg-gray-700">/=</span>
 </div>
 <div className="grid grid-cols-4 items-center gap-4">
 <Label htmlFor="username" className="text-right">
