@@ -18,12 +18,12 @@ export default function Donate() {
       { id: 1, amount: 1 },
       { id: 2, amount: 10 },
       { id: 3, amount: 100 },
-    ],
+    ]
   });
   
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [customAmount, setCustomAmount] = useState<string>('');
+  const [customAmount, setCustomAmount] = useState<string>('200');
   
   const handleDonate = (category: string, amount: number) => {
     setSelectedAmount(amount);
@@ -31,7 +31,7 @@ export default function Donate() {
   };
   
   const handleCustomDonate = () => {
-    if (customAmount !== null && selectedCategory !== null) {
+    if (customAmount) {
       const amount = parseFloat(customAmount);
       if (!isNaN(amount)) {
         setSelectedAmount(amount);
@@ -40,7 +40,7 @@ export default function Donate() {
     }
   };
   
-  const renderLogo = (category) => {
+  const renderLogo = (category: string) => {
     if (category === 'Mpesa') {
       return (
         <>
@@ -59,6 +59,7 @@ export default function Donate() {
           return null; // Return null if category is neither Mpesa nor PayPal
         }
       };
+      
       
       return (
         <div className="w-6xl px-2 py-16 sm:px-0">
@@ -130,21 +131,30 @@ export default function Donate() {
                 <div>
                 {selectedAmount !== null && selectedCategory !== null && (
                   <p className="mt-4 text-primary font-light text-xs">
-                  You're about to donate{' '}
+                  You&apos;re about to donate{' '}
                   {selectedCategory === 'Mpesa' ? 'Kes' : ''}
                   {selectedCategory === 'PayPal' ? '$' : ''}
                   {selectedAmount} to $name via {selectedCategory}{' '}.
-                  {selectedCategory === 'Mpesa' ? `Youll Earn ${selectedAmount / 50} Points for this` : ''} 
-                  {selectedCategory === 'PayPal' ? `Youll Earn ${selectedAmount/0.5} Points for this` : ''}
-                  {renderLogo(selectedCategory)}.
-                  </p>
-                  )}
-                  </div>
-                  </Tab.Panel>
-                  ))}
-                  </Tab.Panels>
-                  </Tab.Group>
-                  </div>
-                  );
-                }
-                
+                  {selectedCategory === 'Mpesa' ? (
+                    <>
+                    You&apos;ll Earn <span className="text-[#3bb44a] text-lg font-bold border border-primary px-3 w-fit rounded-md">{Math.floor(selectedAmount / 50)}</span> Points for this
+                    </>
+                    ) : ''}        
+                    
+                    
+                    {selectedCategory === 'PayPal' ? (
+                      <>
+                      You&apos;ll Earn <span className="text-[#019cde] text-lg font-bold border border-blue-500 px-3 w-fit rounded-md">{Math.floor(selectedAmount / 0.5)}</span> Points for this
+                      </>
+                      ) : ''}                      
+                      </p>
+                      )}
+                      </div>
+                      </Tab.Panel>
+                      ))}
+                      </Tab.Panels>
+                      </Tab.Group>
+                      </div>
+                      );
+                    }
+                    
