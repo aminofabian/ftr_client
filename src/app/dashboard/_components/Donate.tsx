@@ -1,9 +1,10 @@
- 'use client'
- import { useState } from 'react';
- import { Tab } from '@headlessui/react';
- import Image from 'next/image';
- 
- function classNames(...classes: string[]) {
+'use client'
+
+import { useState } from 'react';
+import { Tab } from '@headlessui/react';
+import Image from 'next/image';
+
+function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
 }
 
@@ -34,22 +35,23 @@ export default function Donate() {
       const amount = parseFloat(customAmount);
       if (!isNaN(amount)) {
         setSelectedAmount(amount);
-        setSelectedCategory(selectedCategory); // Use the selected category for custom amounts
+        setSelectedCategory(selectedCategory);
       }
     }
-  };  
+  };
+  
   const renderLogo = (category) => {
     if (category === 'Mpesa') {
       return (
         <>
-        via Mpesa{' '}
+        {' '}
         <Image src="/mpesa-logo.png" width={100} height={100} alt="Mpesa" />
         </>
         );
       } else if (category === 'PayPal') {
         return (
           <>
-          via PayPal{' '}
+          {' '}
           <Image src="/paypal-logo.png" width={80} height={80} alt="PayPal" />
           </>
           );
@@ -91,12 +93,12 @@ export default function Donate() {
               <ul>
               {items.map((item) => (
                 <li key={item.id} className="relative rounded-md p-3 hover:bg-gray-100 flex md:w-[50%] mx-auto">
-                <h3 className="text-sm font-medium leading-5">
+                <h3 className="text-sm font-medium leading-5 bg=[#3bb44a]">
                 {`Donate ${category === 'Mpesa' ? `Kes ${item.amount}` : `${item.amount}`} `}
                 </h3>
                 <button
                 onClick={() => handleDonate(category, item.amount)}
-                className="mt-1 rounded-md bg-primary text-lime-50 px-3 py-2 ml-auto"
+                className={`mt-1 rounded-md ${category === 'PayPal' ? 'bg-[#019cde]' : 'bg-[#3bb44a]'} text-lime-50 px-3 py-2 ml-auto`}
                 >
                 Donate this Amount
                 </button>
@@ -112,7 +114,7 @@ export default function Donate() {
                 />
                 <button
                 onClick={handleCustomDonate}
-                className="mt-1 rounded-md bg-primary text-lime-50 px-3 py-2"
+                className={`mt-1 rounded-md ${selectedCategory === 'PayPal' ? 'bg-[#019cde]' : 'bg-[#3bb44a]'} text-lime-50 px-3 py-2`}
                 >
                 Donate this Amount
                 </button>
@@ -126,40 +128,23 @@ export default function Donate() {
                 </li>
                 </ul>
                 <div>
-                
-                
-                
-                
                 {selectedAmount !== null && selectedCategory !== null && (
-                  <p className="mt-4 text-primary font-light text-sm">
+                  <p className="mt-4 text-primary font-light text-xs">
                   You're about to donate{' '}
                   {selectedCategory === 'Mpesa' ? 'Kes' : ''}
                   {selectedCategory === 'PayPal' ? '$' : ''}
-                  {selectedAmount} to $name via {selectedCategory}{' '}
-                  {selectedCategory === 'Mpesa' ? (
-                    <>
-                    {' '}
-                    <Image src="/mpesa-logo.png" width={100} height={100} alt="Mpesa" />
-                    </>
-                    ) : (
-                      selectedCategory === 'PayPal' && (
-                        <>
-                        {' '}
-                        <Image src="/paypal-logo.png" width={80} height={80} alt="PayPal" />
-                        </>
-                        )
-                        )}.
-                        </p>
-                        )}
-                        
-                        </div>
-                        </Tab.Panel>
-                        ))}
-                        </Tab.Panels>
-                        </Tab.Group>
-                        </div>
-                        );
-                        
-                        
-                      }
-                      
+                  {selectedAmount} to $name via {selectedCategory}{' '}.
+                  {selectedCategory === 'Mpesa' ? `Youll Earn ${selectedAmount / 50} Points for this` : ''} 
+                  {selectedCategory === 'PayPal' ? `Youll Earn ${selectedAmount/0.5} Points for this` : ''}
+                  {renderLogo(selectedCategory)}.
+                  </p>
+                  )}
+                  </div>
+                  </Tab.Panel>
+                  ))}
+                  </Tab.Panels>
+                  </Tab.Group>
+                  </div>
+                  );
+                }
+                

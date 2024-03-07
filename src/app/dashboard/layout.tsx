@@ -3,6 +3,7 @@ import Link from "next/link";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import SideMenu from "@/components/SideMenu";
 import CreateACommunityButton from "./_components/CreateACommunityButton";
+import SearchBasicExample from "./_components/Search";
 
 type Props = {
   children: React.ReactNode;
@@ -16,7 +17,12 @@ const DashBoardLayout = async (props: Props) => {
     <SideMenu />
     </div>
     <div className="h-full rounded-lg bg-gray-100 lg:col-span-3 lg:w-full justify-center">{props.children}</div>
-    <div className="h-fit lg:col-span-1 rounded-lg text-center border w-full"> 
+    
+    <div className="h-fit lg:col-span-1 rounded-lg text-center w-full"> 
+    <div className="SearchBar Container mb-5">
+    <SearchBasicExample />
+    </div>
+    <div className='Community border rounded-md'>
     <Link
     href={`/dashboard/user/${session?.user.id}`}
     >
@@ -29,6 +35,7 @@ const DashBoardLayout = async (props: Props) => {
     </Link>
     <div className="h-fit w-full mt-5">
     <CreateACommunityButton /> 
+    </div>
     </div>
     </div>
     </div>
