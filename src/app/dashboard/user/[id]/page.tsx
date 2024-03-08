@@ -52,7 +52,9 @@ const ProfilePage = async (props: Props) => {
     </span>
     </div>
     </div>
-    </div>
+      </div>
+      
+      
     </div>
     );
   };

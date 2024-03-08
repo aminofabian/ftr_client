@@ -17,6 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Donate from './Donate';
+import MpesaPay from './MpesaPay';
 
 const RequestDisplay = () => {
   return (
@@ -132,10 +133,12 @@ const RequestDisplay = () => {
     </DialogTrigger>
     <DialogContent className="sm:max-w-6xl">
     <DialogHeader>
-    <DialogTitle>Select donation method</DialogTitle>
+    <DialogTitle className='text-primary mx-auto'>SELECT AN AMOUNT</DialogTitle>
     <DialogDescription>
     
-    <Donate />
+    <MpesaPay />
+    
+    
     </DialogDescription>
     </DialogHeader>
     <DialogFooter>
