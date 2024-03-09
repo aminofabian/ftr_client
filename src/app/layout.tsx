@@ -17,11 +17,11 @@ interface Props {
 
 export default function RootLayout(props: Props) {
   return (
-    <html lang="en">
-    <body className={inter.className}>
+    <html lang="en" >
+    <body className={inter.className }>
     <Providers>
     <AppBar />
-    {props.children}
+    <div suppressHydrationWarning>{props.children}</div>
     </Providers>
     </body>
     </html>
