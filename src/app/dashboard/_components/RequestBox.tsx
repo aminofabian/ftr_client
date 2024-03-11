@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, {useState} from 'react';
 import { Input } from '@/components/ui/input';
 import Image from 'next/image';
 import { Label } from "@/components/ui/label";
@@ -17,7 +17,7 @@ import {z, ZodType} from "zod";
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { CalendarIcon } from "@radix-ui/react-icons";
-import { addDays, format } from "date-fns";
+import { addDays, format, set } from "date-fns";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -33,6 +33,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Database, Text } from 'lucide-react';
 
 export default function RequestBox() {
   const MAX_FILE_SIZE = 5000000;
@@ -70,17 +71,10 @@ export default function RequestBox() {
       
       const [date, setDate] = React.useState<Date>();
       
-      const submitData = (e: React.FormEvent<HTMLFormElement>, data: FormData) => {
-        e.preventDefault(); // Prevent default form submission behavior
-        console.log(data);
-        alert('Data submitted:' + JSON.stringify(data));
-      }
-      
-      
       
       return (
         <div className='container lg:w-full h-full border rounded-lg flex flex-col pb-5'>
-        <form className='w-full' onSubmit={handleSubmit(submitData)}>
+        <form className='w-full'>
         <div className='flex flex-col lg:flex-row items-center lg:justify-center w-full'>
         <Image
         src='https://source.unsplash.com/50x50/?portrait'
@@ -95,7 +89,6 @@ export default function RequestBox() {
         placeholder="How Can We Support You Today?"
         id="request"
         className='w-full'
-        {...register('request')}
         style={{ minHeight: '100px', width: 'auto', minWidth: '100px' }}
         />
         </div>
@@ -103,7 +96,7 @@ export default function RequestBox() {
         <Dialog>
         <DialogTrigger>
         <Button variant='default' className='justify-end mt-5' type='button'>
-        Post Your Help Request
+        Submit Your Help Request
         </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[60dvw]">
@@ -120,6 +113,7 @@ export default function RequestBox() {
         id="image"
         className="px-2 py-12 border-2 border-dashed rounded-md dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800"
         onChange={(e) => register('image', { value: e.target.files?.[0] })}
+        
         />
         </div>
         </DialogDescription>

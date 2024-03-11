@@ -1,7 +1,9 @@
 import AppBar from "@/components/AppBar";
 import "./globals.css";
 import Providers from "@/components/Providers";
-import { Jost } from 'next/font/google'
+import { Jost } from 'next/font/google';
+import PrelineScript from "./dashboard/_components/hooks/PrelineScripts";
+
 
 
 export const metadata = {
@@ -22,8 +24,9 @@ export default function RootLayout(props: Props) {
     <Providers>
     <AppBar />
     <div suppressHydrationWarning>{props.children}</div>
-    </Providers>
+    </Providers>    
     </body>
+    <PrelineScript />
     </html>
     );
   }
