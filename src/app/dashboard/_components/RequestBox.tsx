@@ -162,7 +162,7 @@ export default function RequestBox() {
           <SelectItem value="1">Tomorrow</SelectItem>
           <SelectItem value="3">In 3 days</SelectItem>
           <SelectItem value="7">In 1 week</SelectItem>
-          <SelectItem value="14">In 12 weeks</SelectItem>
+          <SelectItem value="84">In 12 weeks</SelectItem>
           <SelectItem value="30">In 1 month</SelectItem>
           <SelectItem value="60">In 2 months</SelectItem>
           <SelectItem value="365">In 1 year</SelectItem>
