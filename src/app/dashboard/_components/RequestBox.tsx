@@ -129,7 +129,7 @@ export default function RequestBox() {
         </div>
         <div className="grid grid-cols-4 items-center gap-4">
         <Label htmlFor="username" className="text-right">
-        Deadline
+        Request Duration
         </Label>
         
         <Popover>
@@ -155,14 +155,14 @@ export default function RequestBox() {
           }
           >
           <SelectTrigger>
-          <SelectValue placeholder="Select Days" className='text-lime-500' />
+          <SelectValue placeholder="Select Days" className='text-lime-500 border-primary' />
           </SelectTrigger>
-          <SelectContent position="popper" className='border border-lime-500'>
+          <SelectContent position="item-aligned" className='border border-lime-500'>
           <SelectItem value="0">Today</SelectItem>
           <SelectItem value="1">Tomorrow</SelectItem>
           <SelectItem value="3">In 3 days</SelectItem>
           <SelectItem value="7">In 1 week</SelectItem>
-          <SelectItem value="84">In 12 weeks</SelectItem>
+          <SelectItem value="14">In 2 weeks</SelectItem>
           <SelectItem value="30">In 1 month</SelectItem>
           <SelectItem value="60">In 2 months</SelectItem>
           <SelectItem value="365">In 1 year</SelectItem>

@@ -21,10 +21,15 @@ import MpesaPay from './MpesaPay';
 
 const RequestDisplay = () => {
   return (
-    <div className="w-full px-6 py-16 mx-auto space-y-12 border rounded-md">
-    <div className="space-y-8 dark:bg-gray-800 dark:text-gray-50">
+    <div className="w-full px-6 py-16 mx-auto space-y-12 border border-primary rounded-md relative pr-3">
+    <div className="md:tracking md:text-sm ml-auto absolute top-5 right-5 border border-primary px-5 py-2 rounded-full mr-2">
+    <Counter />
+    </div>
+    
+    <div className="space-y-2 dark:bg-gray-800 dark:text-gray-50 pr-3">
     <div className="space-y-2">
     <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center dark:text-gray-400">
+    
     <div className="flex items-center md:space-x-2">
     <Image
     src="https://source.unsplash.com/75x75/?portrait"
@@ -63,7 +68,7 @@ const RequestDisplay = () => {
     sizes="100vw"
     alt="post image"
     style={{ width: '100%', height: 'auto' }}
-    className="rounded-lg ring ring-primary shadow-sm opacity-15 scale-97 hover:scale-100"
+    className="rounded-lg ring-1 ring-primary shadow-sm opacity-15 scale-97"
     />
     </div>
     </div>
@@ -73,7 +78,7 @@ const RequestDisplay = () => {
     <a
     rel="noopener noreferrer"
     href="#"
-    className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-400 dark:text-gray-900"
+    className="px-5 py-1 rounded-sm hover:underline dark:bg-violet-400 dark:text-gray-900"
     >
     <HandHeart />{' '}
     <p>
@@ -123,7 +128,7 @@ const RequestDisplay = () => {
     </div>
     </div>
     <div className="space-y-1 flex flex-col items-center justify-between w-full md:flex-row md:items-center dark:text-gray-400">
-    <span className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-sm text-purple-700">
+    <span className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-700">
     12 People Have Donated
     <div className="flex flex-col items-center justify-center">
     <div className="flex flex-row -space-x-4">
@@ -164,7 +169,7 @@ const RequestDisplay = () => {
     <div className="text-sm">
     Deadline:{' '}
     <span className="whitespace-nowrap rounded-full bg-orange-100 px-2.5 py-0.5 text-sm text-orange-700">
-    12/03/2024
+    20/03/2024
     </span>
     </div>
     <div className="p-6 py-2 dark:bg-violet-400 dark:text-gray-900">
@@ -184,9 +189,7 @@ const RequestDisplay = () => {
     </div>
     </div>
     </div>
-    <div className="md:tracki md:text-sm ml-auto">
-    <Counter />
-    </div>
+    <div className='mt-5 h-px absolute bottom-5 right-5'>
     <Dialog>
     <DialogTrigger asChild>
     <Button variant="default">Click to Help</Button>
@@ -210,6 +213,7 @@ const RequestDisplay = () => {
     </DialogFooter>
     </DialogContent>
     </Dialog>
+    </div>
     </div>
     </div>
     );
