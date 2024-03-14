@@ -183,9 +183,9 @@ const RequestDisplay = () => {
     <div className="p-6 py-2 dark:bg-violet-400 dark:text-gray-900">
     <div className="container mx-auto">
     <div className="flex flex-col lg:flex-row items-center justify-between">
-    <h2 className="text-center text-xs tracki text-primary">
-    KES 700 Raised
-    <br className="" /> of KES 1000 goal
+    <h2 className="text-center text-xs tracki">
+    KES 700 raised of
+    <br className="font-semibold" /> KES 1000 target
     </h2>
     <div className="space-x-2 text-center py-2 lg:py-0">
     <div>

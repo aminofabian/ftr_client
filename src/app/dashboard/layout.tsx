@@ -17,9 +17,9 @@ const DashBoardLayout = async (props: Props) => {
     <div className="sidemenu h-fit lg:col-span-1 rounded-lg bg-gray-200">
     <SideMenu />
     </div>
-    <div className="main h-full rounded-lg bg-gray-100 lg:col-span-3 lg:w-full justify-center">{props.children}</div>
+    <div className="main h-full rounded-lg bg-gray-100 lg:col-span-3 lg:w-full justify-center order-3 md:order-2">{props.children}</div>
     
-    <div className="h-fit lg:col-span-1 rounded-lg text-center w-full"> 
+    <div className="h-fit lg:col-span-1 rounded-lg text-center w-full md:order-3"> 
     <div className="SearchBar Container mb-5">
     <SearchBar />
     </div>
