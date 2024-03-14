@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { BadgeCheck, Bookmark, HandHeart, MessageCircleHeart, Repeat2 } from 'lucide-react';
+import { BadgeCheck, Bookmark, HandHeart, MessageCircleHeart, Repeat2, HeartOff } from 'lucide-react';
 import Slider from './Slider';
 import Counter from './Counter';
 import { Button } from '@/components/ui/button';
@@ -22,12 +22,11 @@ import MpesaPay from './MpesaPay';
 const RequestDisplay = () => {
   return (
     <div className="w-full px-6 py-16 mx-auto space-y-12 border border-primary rounded-md relative pr-3">
-    <div className="md:tracking md:text-sm ml-auto absolute top-5 right-5 border border-primary px-5 py-2 rounded-full mr-2">
+    <div className="md:tracking md:text-sm ml-auto absolute top-3 right-3 px-5 py-2 rounded-md mr-2">
     <Counter />
-    </div>
-    
-    <div className="space-y-2 dark:bg-gray-800 dark:text-gray-50 pr-3">
-    <div className="space-y-2">
+    </div>    
+    <div className="space-y-1 dark:bg-gray-800 dark:text-gray-50 pr-3">
+    <div className="space-y-1">
     <div className="flex flex-col items-start justify-between w-full md:flex-row md:items-center dark:text-gray-400">
     
     <div className="flex items-center md:space-x-2">
@@ -73,61 +72,70 @@ const RequestDisplay = () => {
     </div>
     </div>
     <div>
-    <div className="flex flex-wrap py-2 border-t border-dashed dark:border-gray-400">
-    <div className="flex">
+    <div className="flex flex-wrap pb-2 border-b border-primary dark:border-gray-400 gap-5">
+    <div className="flex gap-5">
     <a
     rel="noopener noreferrer"
     href="#"
     className="px-5 py-1 rounded-sm hover:underline dark:bg-violet-400 dark:text-gray-900"
     >
-    <HandHeart />{' '}
-    <p>
-    <span className="whitespace-nowrap rounded-full bg-lime-100 px-2.5 py-0.5 text-sm text-lime-700">
-    12 Hearts
-    </span>
-    </p>
+    <div className="flex gap-2 whitespace-nowrap rounded-full px-2.5 pb-0.5 text-xs text-lime-700 hover:text-primary">
+    <HandHeart />
+    12
+    </div>
+    
     </a>
     <a
     rel="noopener noreferrer"
     href="#"
     className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-400 dark:text-gray-900"
     >
+    <div className="flex gap-2 whitespace-nowrap rounded-full px-2.5 pb-0.5 text-xs text-lime-700 hover:text-primary">
     <MessageCircleHeart />
-    <p>
-    <span className="whitespace-nowrap rounded-full bg-lime-100 px-2.5 py-0.5 text-sm text-lime-700">
-    5 Comments
-    </span>
-    </p>
+    5
+    </div>
+    
     </a>
     </div>
-    <div className="flex">
+    <div className="flex gap-5">
     <a
     rel="noopener noreferrer"
     href="#"
     className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-400 dark:text-gray-900"
     >
+    <div className="flex gap-2 whitespace-nowrap rounded-full px-2.5 pb-0.5 text-xs text-lime-700 hover:text-primary">
+    
     <Repeat2 />
-    <p>
-    <span className="whitespace-nowrap rounded-full bg-lime-100 px-2.5 py-0.5 text-sm text-lime-700">
-    3 Shares
-    </span>
-    </p>
+    
+    3
+    </div>
+    
     </a>
     <a
     rel="noopener noreferrer"
     href="#"
     className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-400 dark:text-gray-900"
     >
+    <div className="flex gap-2 whitespace-nowrap rounded-full px-2.5 pb-0.5 text-xs text-lime-700 hover:text-primary">
     <Bookmark />
-    <p>
-    <span className="whitespace-nowrap rounded-full bg-lime-100 px-2.5 py-0.5 text-sm text-lime-700">
-    1 Bookmark
-    </span>
-    </p>
+    1
+    </div>
     </a>
+    
+    <a
+    rel="noopener noreferrer"
+    href="#"
+    className="px-3 py-1 rounded-sm hover:underline dark:bg-violet-400 dark:text-gray-900"
+    >
+    <div className="flex gap-2 whitespace-nowrap rounded-full px-2.5 pb-0.5 text-xs text-lime-700 hover:text-primary">
+    <HeartOff />
+    1
+    </div>
+    </a>
+    
     </div>
     </div>
-    <div className="space-y-1 flex flex-col items-center justify-between w-full md:flex-row md:items-center dark:text-gray-400">
+    <div className="space-y-1 flex flex-col items-center justify-between w-full md:flex-row md:items-center dark:text-gray-400 pt-5">
     <span className="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-700">
     12 People Have Donated
     <div className="flex flex-col items-center justify-center">

@@ -77,20 +77,20 @@ const Request = () => {
     request: z.string().min(30).max(300),
     image: z.array(
       z
-        .any()
-        .optional()
-        .refine((file) => !file || file.size <= MAX_FILE_SIZE, `Max image size is ${MAX_FILE_SIZE / (1024 * 1024)}MB.`)
-        .refine(
-          (file) => !file || ACCEPTED_IMAGE_MIME_TYPES.includes(file.type),
-          `Only ${ACCEPTED_IMAGE_MIME_TYPES.join(', ')} formats are supported.`
+      .any()
+      .optional()
+      .refine((file) => !file || file.size <= MAX_FILE_SIZE, `Max image size is ${MAX_FILE_SIZE / (1024 * 1024)}MB.`)
+      .refine(
+        (file) => !file || ACCEPTED_IMAGE_MIME_TYPES.includes(file.type),
+        `Only ${ACCEPTED_IMAGE_MIME_TYPES.join(', ')} formats are supported.`
         )
-    ),
-    amount: z.number().min(20).max(100000),
-    community: z.string().min(3).max(50),
-    deadline: z.date(),
-    typeOfHelp: z.string().min(3).max(50),
-    location: z.string().min(3).max(50),
-  });
+        ),
+        amount: z.number().min(20).max(100000),
+        community: z.string().min(3).max(50),
+        deadline: z.date(),
+        typeOfHelp: z.string().min(3).max(50),
+        location: z.string().min(3).max(50),
+      });
       
       const {
         register,
@@ -100,7 +100,7 @@ const Request = () => {
         resolver: zodResolver(schema),
       });
       
-      function onSubmit(e: FormEvent) {
+      function handleRequest(e: FormEvent) {
         e.preventDefault()
         if (!isLastStep) return next()
         alert("You've successfully submitted your request!")
@@ -110,7 +110,7 @@ const Request = () => {
       
       return (
         <div className='relative bg-sky-50 border p-2 m-2 rounded-md'>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleRequest}>
         <div className='absolute, top-5 right-5  '>
         <p className="flex-shrink-0 mt-3 text-sm md:mt-0">
         <span className="whitespace-nowrap rounded-full bg-sky-100 px-2.5 py-0.5 text-xs text-sky-700">
@@ -127,7 +127,7 @@ const Request = () => {
         </Button>
         </div>
         </form>
-
+        
         </div>
         
         )

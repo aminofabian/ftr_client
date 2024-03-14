@@ -31,7 +31,7 @@ const Login = (props: FormInputs) => {
   
   return (
     <div className={props.className}>
-    <div className="w-full max-w-lg p-4 space-y-3 rounded-xl dark:bg-gray-900 dark:text-gray-100 mx-auto border mt-10">
+    <div className="w-full max-w-full p-4 space-y-3 rounded-xl dark:bg-gray-900 dark:text-gray-100 mx-auto border mt-10">
     <h1 className="text-2xl font-bold text-center">Login</h1>  
     <Image src="logo.svg" className="mx-auto"
     width={100}
@@ -52,7 +52,8 @@ const Login = (props: FormInputs) => {
     </div>
     </div>
     <div className="flex justify-center items-center gap-2">
-    <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 dark:bg-violet-400 bg-primary text-white" type='submit'>Sign in</button>
+    <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 dark:bg-violet-400 bg-primary text-white" type='submit'>
+    Sign in</button>
     <Link className="hover:text-primary w-full text-center bg-sky-50 p-3" href='/'>
     Cancel
     </Link>

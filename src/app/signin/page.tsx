@@ -8,7 +8,7 @@ type Props = {
 }
 const SignInPage = (props: Props) => {
   return (
-    <div className=''>
+    <div className='w-8xl h-full flex justify-center items-center'>
     <Login className='' error={props.searchParams?.error} callbackUrl={props.searchParams?.callbackUrl} />
     </div>
     )

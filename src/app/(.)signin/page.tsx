@@ -9,11 +9,9 @@ type Props = {
 }
 const SignInPageIntercepted = (props: Props) => {
   return (
-    <div>
     <Modal>
     <Login className='' error={props.searchParams?.error} callbackUrl={props.searchParams?.callbackUrl} />
     </Modal>
-    </div>
     )
   }
   

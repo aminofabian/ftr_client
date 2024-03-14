@@ -5,8 +5,8 @@ import { Modal } from '@/components/Modal';
 
 const SignOutPageIntercepted = () => {
   return (
-    <div>
-    <Modal>
+    <div className='container'>
+    <Modal className='w-full'>
     <SignOut />
     </Modal>
     </div>

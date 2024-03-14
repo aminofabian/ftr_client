@@ -2,7 +2,7 @@ import SignOut from "@/components/SignOut";
 
 const SignOutPage = () => {
   return (
-    <div>
+    <div className='container'>
     <SignOut />
     </div>
     )

@@ -30,8 +30,8 @@ const Counter = () => {
 
   return (
     <div>
-      <div className="flex gap-1 text-center auto-cols-max">
-        <div className="flex flex-col p-1 bg-neutral rounded-box text-neutral-content">
+      <div className={`flex gap-1 text-center auto-cols-max text-xs ${timeLeft.days < 7 ? 'text-red-500 border border-red-500 px-3 rounded-md' : 'border border-primary px-3 rounded-md'}`}>
+        <div className={`flex flex-col p-1 bg-neutral rounded-box text-neutral-content`}>
           <span className="countdown font-mono text-xs">
             <span style={{ "--value": timeLeft.days }}>{timeLeft.days}</span>
           </span>

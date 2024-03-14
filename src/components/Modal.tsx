@@ -30,14 +30,14 @@ export const Modal = ({ show = true, children, className }: IProps) => {
     <Transition.Child
     as={Fragment}
     enter="ease-out duration-300"
-    enterFrom="opacity-0 scale-95"
+    enterFrom="opacity-0 scale-105"
     enterTo="opacity-100 scale-100"
     leave="ease-in duration-200"
     leaveFrom="opacity-100 scale-100"
     leaveTo="opacity-0 scale-95"
     >
     <Dialog.Panel
-    className={`w1/2 mx-5 ${className}   rounded-md overflow-hidden  bg-white   text-left align-middle shadow-xl transition-all`}
+    className={`md:w-[40%] mx-5 ${className}   rounded-md overflow-hidden  bg-white   text-left align-middle shadow-xl transition-all mx-5`}
     >
     {children}
     </Dialog.Panel>
